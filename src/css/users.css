@@ -1,0 +1,70 @@
+.tableStyle {
+    background-image: linear-gradient(#ffffff, #018DAB);
+    background-size: cover; /* Ensure the gradient covers the entire table */
+    color: #000; /* Adjust text color if necessary for better readability */
+    text-align: center;
+  }
+  
+  .tableStyle th, .tableStyle td {
+    background-color: transparent; /* Make sure table cells are transparent */
+  }
+  
+  .tableStyle thead th {
+    background-color: #6a005a1a; /* Optional: Slightly darken the header for contrast */
+  }
+
+  .icon-button {
+    padding: 0;
+    border: none;
+    background: none;
+    color: #007bff; /* Adjust the color as needed */
+    font-size: 1.2rem; /* Adjust icon size */
+    cursor: pointer;
+  }
+  
+  .icon-button:hover {
+    color: #0056b3; /* Change color on hover for better UX */
+  }
+  
+  .icon-button i {
+    vertical-align: middle;
+  }
+
+  .delete-icon:hover {
+    color: rgb(5, 139, 0); /* Change color on hover for better UX */
+  }
+
+  .divAddBtn{
+    justify-content: end;
+    display: flex;
+  }
+
+  .AddBtn{
+    width: 130px;
+    border: unset !important;
+    border-radius: 50px !important;
+    font-size: 12px !important;
+    height: 40px;
+    /* background-image: linear-gradient(to right, #C606A7 , #018DAB); */
+    background-color:#c68d12 !important;
+    box-shadow: 0px 0px 20px #daa22ab8;
+  }
+
+  .tableFooter{
+    margin-top: 25px !important;
+  }
+
+  .titleStyle{
+    font-size: 20px !important;
+  }
+
+.tbodyStyle{
+  font-size: 14px;
+}
+
+.form-control{
+  height: 95%;
+  width: 60% !important;
+  font-size: .8rem !important;
+  color: #777777 !important;
+}

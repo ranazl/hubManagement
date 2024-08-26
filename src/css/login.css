@@ -1,0 +1,132 @@
+.login-layout {
+    margin: 20px;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+  .bgPicture {
+    height: 95vh;
+    /* opacity: 0.7; */
+  }
+  
+  .submit {
+    width: 40rem;
+    height: 50px;
+    background-color: #3C39AA !important;
+    margin-top: 50px;
+    border-radius: 10px;
+    border-color: unset;
+  }
+  
+  .submit:hover{
+    background-color: #5550ca !important;
+    border-color: unset;
+  }
+  
+  #username {
+    width: 40rem;
+    height: 50px;
+    border-radius: 10px;
+  }
+   
+  #password {
+    width: 40rem;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .pass{
+    margin-top: 50px;
+  }
+  
+  .formClass {
+    direction: rtl;
+    margin-right: 10%;
+    /* margin-top: 50px; */
+  }
+  
+  .form-check {
+    display: inline-block !important;
+  }
+  
+  .remember {
+    margin-right: 24rem;
+  }
+  
+  .titleClass{
+    margin-right: 30%;
+    margin-bottom: 50px;
+  }
+  
+  .rememberTitle{
+    color: #0e50b3;
+  }
+  
+  .signUp-title{
+    margin: 20px 13%;
+  }
+  
+  a{
+    text-decoration: unset;
+  }
+  
+  @media (max-width:1700px) {
+  
+    #username {
+      width: 30rem;
+    }
+  
+    #password {
+      width: 30rem;
+    }
+  
+    .submit {
+      width: 30rem;
+    }
+  
+    .formClass {
+      padding: 0px;
+    }
+  
+    .remember {
+      margin-right: 14rem;
+  }
+  
+  }
+  
+   
+  
+  @media (max-width:1540px) {
+  
+    #username {
+      width: 25rem !important;
+    }
+  
+    #password {
+      width: 25rem !important;
+    }
+  
+    .submit {
+      width: 25rem;
+    }
+  
+    .formClass {
+      padding: 0px;
+    }
+  
+    .remember {
+      margin-right: 9rem;
+  }
+  
+  .bgPicture {
+    /* height: 850px; */
+    width: 550px;
+  }
+  
+  }
+
+  input[type="text"].custom-input {
+    color: #8e0000 !important;
+}

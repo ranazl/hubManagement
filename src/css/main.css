@@ -1,0 +1,45 @@
+body > #root > div {
+    height: 100vh;
+}
+
+.mainBody{
+    background-color: #000426;
+}
+
+.navStyle{
+    background-color: #050c46;
+    height: 100vh;
+    font-size: 14px !important;
+}
+
+.navLink {
+    color: #fff !important;
+}
+  
+.navLink.activeLink {
+    background-color: #007c9782 !important;
+}
+
+.mainContent{
+    color: white !important;
+}
+
+.headerStyle{
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ffffff;
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.titleHeader{
+    margin-bottom: 20px;
+    margin: 0px;
+}
+
+.iconStyle{
+    font-size: 20px;
+    margin-right: 8px;
+}
