@@ -76,7 +76,7 @@ const Users = () => {
   return (
     <div className="container mt-3">
 
-<Row className="mb-3">
+      <Row className="mb-3">
         <Col md={4}>
           <Form.Control
             type="text"
@@ -134,7 +134,7 @@ const Users = () => {
 
         <Col md={10}>
           <Pagination
-             count={Math.ceil(filteredData.length / usersPerPage)}
+            count={Math.ceil(filteredData.length / usersPerPage)}
             page={currentPage}
             onChange={handlePageChange}
             shape="rounded"
@@ -178,8 +178,8 @@ const Users = () => {
         />
       )}
 
-       {/* Add User Modal */}
-       {showAddModal && (
+      {/* Add User Modal */}
+      {showAddModal && (
         <AddUser
           showModal={showAddModal}
           handleClose={() => setShowAddModal(false)}

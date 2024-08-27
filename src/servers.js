@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import ConfirmModal from './confirmModal';
-import { Table, Button } from 'react-bootstrap';
-// import Pagination from '@mui/material/Pagination';
+import { Table, Button, Row, Col, Form } from 'react-bootstrap';
+import Pagination from '@mui/material/Pagination';
 import EditServerModal from './editServerModal';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/users.css';
+import AddServer from './addServer';
 
 const Servers = () => {
 
@@ -22,6 +23,29 @@ const Servers = () => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [showModal, setShowModal] = useState(false);
+
+    const [showAddModal, setShowAddModal] = useState(false);
+
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const usersPerPage = 4;
+
+
+    const handlePageChange = (event, page) => {
+        setCurrentPage(page);
+    };
+
+    const filteredData = data.filter(server =>
+        server.serviceCode.includes(searchTerm) ||
+        server.adress.includes(searchTerm) ||
+        server.parentsCode.includes(searchTerm) ||
+        server.roles.includes(searchTerm)
+    );
+
+    const indexOfLastUser = currentPage * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = filteredData.slice(indexOfFirstUser, indexOfLastUser);
 
     const handleDelete = (item) => {
         setItemToDelete(item);
@@ -45,10 +69,25 @@ const Servers = () => {
     const handleSaveChanges = (editedUser) => {
         setData(data.map(item => item.number === editedUser.number ? editedUser : item));
         setShowModal(false);
-    }
+    };
+
+    const handleAddServer = (newServer) => {
+        setData([...data, { ...newServer, number: data.length + 1 }]);
+        setShowAddModal(false);
+    };
 
     return (
         <div>
+            <Row className="mb-3">
+                <Col md={4}>
+                    <Form.Control
+                        type="text"
+                        placeholder="جستجو..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </Col>
+            </Row>
             <Table striped bordered hover className='tableStyle'>
                 <thead>
                     <tr>
@@ -61,7 +100,7 @@ const Servers = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((item) => (
+                    {currentUsers.map((item) => (
                         <tr key={item.number}>
                             <td>{item.number}</td>
                             <td>{item.serviceCode}</td>
@@ -92,6 +131,36 @@ const Servers = () => {
                 </tbody>
             </Table>
 
+            <Row>
+
+                <Col md={10}>
+                    <Pagination
+                        count={Math.ceil(filteredData.length / usersPerPage)}
+                        page={currentPage}
+                        onChange={handlePageChange}
+                        shape="rounded"
+                        sx={{
+                            '& .MuiPaginationItem-root': {
+                                color: 'white',
+                                borderColor: 'white',
+                            },
+                            '& .MuiPaginationItem-page.Mui-selected': {
+                                backgroundColor: 'white',
+                                color: 'black',
+                            }
+                        }}
+                    />
+                </Col>
+
+                <Col md={2} className='divAddBtn'>
+                    <Button className='AddBtn' onClick={() => setShowAddModal(true)}>
+                        تعریف سرور جدید
+                    </Button>
+                </Col>
+
+            </Row>
+
+
             {/* Edit Modal */}
             {showModal && (
                 <EditServerModal
@@ -108,6 +177,14 @@ const Servers = () => {
                     message="آیا از پاک کردن این سرویس مطمئن هستید؟"
                     onConfirm={confirmDelete}
                     onCancel={cancelDelete}
+                />
+            )}
+
+            {showAddModal && (
+                <AddServer
+                    showModal={showAddModal}
+                    handleClose={() => setShowAddModal(false)}
+                    handleAddServer={handleAddServer}
                 />
             )}
 
