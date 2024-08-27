@@ -25,13 +25,16 @@ body > #root > div {
 }
 
 .headerStyle{
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ffffff;
+    margin-bottom: 20px;
     justify-content: end;
     display: flex;
     align-items: center;
     color: white;
+}
+
+.borderBottom{
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 20px;
 }
 
 .titleHeader{
@@ -42,4 +45,8 @@ body > #root > div {
 .iconStyle{
     font-size: 20px;
     margin-right: 8px;
+}
+
+.logoStyle{
+    width: 70%;
 }

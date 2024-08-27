@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
+import Logo from './asset/Logo.png'
 import './css/main.css';
 // import Users from './users';
 import Servers from './servers';
@@ -57,12 +58,17 @@ const Main = () => {
         </Col>
         <Col md={10} className="p-3">
 
-          <div className='headerStyle'>
-            <h6 className='titleHeader'>
-              رعنا ذوالفقاری
-            </h6>
-            <i className="bi bi-person-fill iconStyle"></i>
-          </div>
+          <Row className='borderBottom'>
+            <Col md={2}>
+              <img src={Logo} alt='Logo' className='logoStyle' />
+            </Col>
+            <Col md={10} className='headerStyle'>
+              <h6 className='titleHeader'>
+                رعنا ذوالفقاری
+              </h6>
+              <i className="bi bi-person-fill iconStyle"></i>
+            </Col>
+          </Row>
 
           <div className='mainContent'>
             {renderContent()}
