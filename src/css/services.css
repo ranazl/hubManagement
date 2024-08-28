@@ -1,5 +1,5 @@
 .tableStyle {
-    background-image: linear-gradient(#ffffff, #018DAB);
+    background-image: linear-gradient(#ffffff, #417581);
     background-size: cover; /* Ensure the gradient covers the entire table */
     color: #000; /* Adjust text color if necessary for better readability */
     text-align: center;
@@ -67,4 +67,21 @@
   width: 60% !important;
   font-size: .8rem !important;
   color: #777777 !important;
+}
+
+.searchParent{
+  position: relative;
+}
+
+.serachIcon{
+  color: #0d6efd;
+  position: absolute;
+  top: 0;
+  margin-right: 49%;
+  margin-top: 2px;
+}
+
+.theadStyle{
+  /* background-image: linear-gradient(#ffffff, #658e97); */
+  background: #d3e3ee;
 }

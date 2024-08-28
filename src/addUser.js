@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import './css/users.css';
+import './css/services.css';
 
 const AddUser = ({ showModal, handleClose, handleAddUser }) => {
   const [newUser, setNewUser] = useState({

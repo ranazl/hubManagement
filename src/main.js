@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import Logo from './asset/Logo.png'
 import './css/main.css';
-// import Users from './users';
+import Users from './users';
 import Servers from './servers';
 
 const Main = () => {
@@ -12,10 +12,12 @@ const Main = () => {
     switch (activeTab) {
       case 'Users':
         return <div>
-          <Servers />
+          <Users />
         </div>;
       case 'Services':
-        return <div>مدیریت سرویس ها</div>;
+        return <div>
+          <Servers/>
+        </div>;
       case 'Access':
         return <div>مدیریت دسترسی ها</div>;
       case 'Reports':

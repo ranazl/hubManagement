@@ -1,0 +1,10 @@
+{
+    "posts": [
+      { "id": 1, "title": "Hello World", "author": "Rana" }
+    ],
+    "comments": [
+      { "id": 1, "body": "Nice post!", "postId": 1 }
+    ],
+    "profile": { "name": "Rana" }
+  }
+  

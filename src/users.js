@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ConfirmModal from './confirmModal';
 import { Table, Button, Row, Col, Form } from 'react-bootstrap';
 import Pagination from '@mui/material/Pagination';
 import EditUserModal from './editUserModal';
 import AddUser from './addUser';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './css/users.css';
+import './css/services.css';
+import axios from 'axios';
 
 const Users = () => {
   const [data, setData] = useState([
@@ -16,6 +17,15 @@ const Users = () => {
     { number: 5, nationalCode: '5645767568', name: 'پریسا', familyName: 'داودی', roles: 'کارمند' },
     { number: 6, nationalCode: '1234567899', name: 'زهرا', familyName: 'فروتن', roles: 'کارمند' },
   ]);
+
+  useEffect(() => {
+    axios.get("")
+    .then(response => {
+      console.log(response)
+    }).catch(error => {
+      console.log(error)
+    })
+  },[])
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -77,18 +87,19 @@ const Users = () => {
     <div className="container mt-3">
 
       <Row className="mb-3">
-        <Col md={4}>
+        <Col md={4} className='searchParent'>
           <Form.Control
             type="text"
             placeholder="جستجو..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <i className="bi bi-search serachIcon"></i>
         </Col>
       </Row>
 
       <Table striped bordered hover className='tableStyle'>
-        <thead>
+        <thead className='theadStyle'>
           <tr>
             <th>ردیف</th>
             <th>کد ملی</th>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ConfirmModal from './confirmModal';
 import { Table, Button, Row, Col, Form } from 'react-bootstrap';
 import Pagination from '@mui/material/Pagination';
 import EditServerModal from './editServerModal';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './css/users.css';
+import './css/services.css';
 import AddServer from './addServer';
+import axios from 'axios';
 
 const Servers = () => {
 
@@ -17,6 +18,15 @@ const Servers = () => {
         { number: 5, serviceCode: '5645767568', adress: 'مهراباد', parentsCode: '727272', roles: 'کارمند' },
         { number: 6, serviceCode: '1234567899', adress: 'جردن', parentsCode: '717171', roles: 'کارمند' },
     ]);
+
+    useEffect(() => {
+        axios.get("")
+            .then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
+    }, [])
 
     const [itemToDelete, setItemToDelete] = useState(null);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -77,19 +87,20 @@ const Servers = () => {
     };
 
     return (
-        <div>
+        <div className="container mt-3">
             <Row className="mb-3">
-                <Col md={4}>
+                <Col md={4} className='searchParent'>
                     <Form.Control
                         type="text"
                         placeholder="جستجو..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
+                     <i className="bi bi-search serachIcon"></i>
                 </Col>
             </Row>
             <Table striped bordered hover className='tableStyle'>
-                <thead>
+                <thead className='theadStyle'>
                     <tr>
                         <th>ردیف</th>
                         <th>کد سرویس</th>
@@ -131,7 +142,7 @@ const Servers = () => {
                 </tbody>
             </Table>
 
-            <Row>
+            <Row className='tableFooter'>
 
                 <Col md={10}>
                     <Pagination
