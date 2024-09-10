@@ -37,7 +37,7 @@ body > #root > div {
     margin-bottom: 20px;
 }
 
-.titleHeader{
+.userTitle{
     margin-bottom: 20px;
     margin: 0px;
 }
@@ -50,3 +50,9 @@ body > #root > div {
 .logoStyle{
     width: 70%;
 }
+
+/* @media (max-width:1030px) {
+    .navStyle{
+        font-size: 12px !important;
+    }
+} */

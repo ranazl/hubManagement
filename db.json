@@ -1,10 +1,91 @@
 {
-    "posts": [
-      { "id": 1, "title": "Hello World", "author": "Rana" }
+    "Users": [
+      {
+        "number": "1",
+        "nationalCode": "1234567890",
+        "name": "رعنا",
+        "familyName": "ذوالفقاری",
+        "roles": "ادمین"
+      },
+      {
+        "number": "2",
+        "nationalCode": "0987654321",
+        "name": "اسماعیل",
+        "familyName": "مومن",
+        "roles": "مدیر"
+      },
+      {
+        "number": "3",
+        "nationalCode": "4565780987",
+        "name": "نیما",
+        "familyName": "رستمی",
+        "roles": "معاون"
+      },
+      {
+        "number": "4",
+        "nationalCode": "3458621902",
+        "name": "مهدی",
+        "familyName": "جمالی",
+        "roles": "کارمند"
+      },
+      {
+        "number": "5",
+        "nationalCode": "5645767568",
+        "name": "پریسا",
+        "familyName": "داودی",
+        "roles": "کارمند"
+      },
+      {
+        "number": "6",
+        "nationalCode": "1234567899",
+        "name": "زهرا",
+        "familyName": "فروتن",
+        "roles": "کارمند"
+      }
     ],
-    "comments": [
-      { "id": 1, "body": "Nice post!", "postId": 1 }
-    ],
-    "profile": { "name": "Rana" }
+    "Servers": [
+      {
+        "number": "1",
+        "serviceCode": "1234567890",
+        "adress": "حکیم غرب",
+        "parentsCode": "737373",
+        "roles": "ادمین"
+      },
+      {
+        "number": "2",
+        "serviceCode": "0987654321",
+        "adress": "شهران",
+        "parentsCode": "525252",
+        "roles": "مدیر"
+      },
+      {
+        "number": "3",
+        "serviceCode": "4565780987",
+        "adress": "انقلاب",
+        "parentsCode": "646464",
+        "roles": "معاون"
+      },
+      {
+        "number": "4",
+        "serviceCode": "3458621902",
+        "adress": "کرج",
+        "parentsCode": "585858",
+        "roles": "کارمند"
+      },
+      {
+        "number": "5",
+        "serviceCode": "5645767568",
+        "adress": "مهراباد",
+        "parentsCode": "727272",
+        "roles": "کارمند"
+      },
+      {
+        "number": "6",
+        "serviceCode": "1234567899",
+        "adress": "جردن",
+        "parentsCode": "717171",
+        "roles": "کارمند"
+      }
+    ]
   }
   

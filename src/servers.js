@@ -10,19 +10,13 @@ import axios from 'axios';
 
 const Servers = () => {
 
-    const [data, setData] = useState([
-        { number: 1, serviceCode: '1234567890', adress: 'حکیم غرب', parentsCode: '737373', roles: 'ادمین' },
-        { number: 2, serviceCode: '0987654321', adress: 'شهران', parentsCode: '525252', roles: 'مدیر' },
-        { number: 3, serviceCode: '4565780987', adress: 'انقلاب', parentsCode: '646464', roles: 'معاون' },
-        { number: 4, serviceCode: '3458621902', adress: 'کرج', parentsCode: '585858', roles: 'کارمند' },
-        { number: 5, serviceCode: '5645767568', adress: 'مهراباد', parentsCode: '727272', roles: 'کارمند' },
-        { number: 6, serviceCode: '1234567899', adress: 'جردن', parentsCode: '717171', roles: 'کارمند' },
-    ]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("")
+        axios.get("http://localhost:3000/Servers")
             .then(response => {
-                console.log(response)
+                const servers = response.data
+                setData(servers)
             }).catch(error => {
                 console.log(error)
             })
@@ -89,16 +83,18 @@ const Servers = () => {
     return (
         <div className="container mt-3">
             <Row className="mb-3">
-                <Col md={4} className='searchParent'>
-                    <Form.Control
-                        type="text"
-                        placeholder="جستجو..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                     <i className="bi bi-search serachIcon"></i>
-                </Col>
-            </Row>
+        <Col md={4} className='searchParent'>
+          <div className="searchWrapper">
+            <Form.Control
+              type="text"
+              placeholder="جستجو..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <i className="bi bi-search searchIcon"></i>
+          </div>
+        </Col>
+      </Row>
             <Table striped bordered hover className='tableStyle'>
                 <thead className='theadStyle'>
                     <tr>
@@ -110,7 +106,7 @@ const Servers = () => {
                         <th>عملیات</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='tbodyStyle'>
                     {currentUsers.map((item) => (
                         <tr key={item.number}>
                             <td>{item.number}</td>

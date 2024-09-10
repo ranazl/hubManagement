@@ -55,7 +55,7 @@
   }
 
   .titleStyle{
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 
 .tbodyStyle{
@@ -65,23 +65,44 @@
 .form-control{
   height: 95%;
   width: 60% !important;
-  font-size: .8rem !important;
+  font-size: .75rem !important;
   color: #777777 !important;
 }
 
-.searchParent{
+.searchParent {
   position: relative;
 }
 
-.serachIcon{
+.searchWrapper {
+  position: relative;
+}
+
+.searchWrapper .form-control {
+  padding-right: 40px; /* Extra space for the icon */
+}
+
+.searchIcon {
   color: #0d6efd;
   position: absolute;
-  top: 0;
-  margin-right: 49%;
-  margin-top: 2px;
+  right: 10px; /* Position icon inside input */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none; /* Make sure the icon doesn't interfere with input clicks */
 }
+
 
 .theadStyle{
   /* background-image: linear-gradient(#ffffff, #658e97); */
   background: #d3e3ee;
+}
+
+.form-label{
+  font-size: 14px !important;
+}
+
+@media (max-width:1000px) {
+  .AddBtn{
+    font-size: 55% !important;
+  }
 }

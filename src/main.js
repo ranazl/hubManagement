@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import Logo from './asset/Logo.png'
+import { useLocation } from 'react-router-dom'; // Import useLocation
+import Logo from './asset/Logo.png';
 import './css/main.css';
 import Users from './users';
 import Servers from './servers';
 
 const Main = () => {
   const [activeTab, setActiveTab] = useState('Users');
+  const location = useLocation(); // Use useLocation to access the passed state
+  const username = location.state?.username; // Fallback to default name if not provided
 
   const renderContent = () => {
     switch (activeTab) {
       case 'Users':
-        return <div>
-          <Users />
-        </div>;
+        return <div><Users /></div>;
       case 'Services':
-        return <div>
-          <Servers/>
-        </div>;
+        return <div><Servers /></div>;
       case 'Access':
         return <div>مدیریت دسترسی ها</div>;
       case 'Reports':
@@ -30,7 +29,7 @@ const Main = () => {
   return (
     <Container fluid className='mainBody'>
       <Row>
-        <Col md={2} className="navStyle p-3">
+        <Col xs={4} md={3} lg={2} className="navStyle p-3">
           <Nav variant="pills" className="flex-column">
             <Nav.Link
               onClick={() => setActiveTab('Users')}
@@ -58,24 +57,21 @@ const Main = () => {
             </Nav.Link>
           </Nav>
         </Col>
-        <Col md={10} className="p-3">
-
+        <Col xs={8} md={9} lg={10} className="p-3">
           <Row className='borderBottom'>
-            <Col md={2}>
+            <Col md={2} xs={4}>
               <img src={Logo} alt='Logo' className='logoStyle' />
             </Col>
-            <Col md={10} className='headerStyle'>
-              <h6 className='titleHeader'>
-                رعنا ذوالفقاری
+            <Col md={10} xs={8} className='headerStyle'>
+              <h6 className='userTitle'>
+                {username}
               </h6>
               <i className="bi bi-person-fill iconStyle"></i>
             </Col>
           </Row>
-
           <div className='mainContent'>
             {renderContent()}
           </div>
-
         </Col>
       </Row>
     </Container>
