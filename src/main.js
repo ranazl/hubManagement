@@ -57,6 +57,7 @@ const Main = () => {
             </Nav.Link>
           </Nav>
         </Col>
+
         <Col xs={8} md={9} lg={10} className="p-3">
           <Row className='borderBottom'>
             <Col md={2} xs={4}>
@@ -73,6 +74,7 @@ const Main = () => {
             {renderContent()}
           </div>
         </Col>
+        
       </Row>
     </Container>
   );

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ConfirmModal from './confirmModal';
-import { Table, Button, Row, Col, Form } from 'react-bootstrap';
+import { Table, Button, Row, Col } from 'react-bootstrap';
 import Pagination from '@mui/material/Pagination';
 import EditUserModal from './editUserModal';
 import AddUser from './addUser';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/services.css';
 import axios from 'axios';
+import Search from './components/search';
 
 const Users = () => {
   const [data, setData] = useState([]);
@@ -79,22 +80,7 @@ const Users = () => {
 
   return (
     <div className="container mt-3">
-
-      <Row className="mb-3">
-        <Col md={4} className='searchParent'>
-          <div className="searchWrapper">
-            <Form.Control
-              type="text"
-              placeholder="جستجو..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <i className="bi bi-search searchIcon"></i>
-          </div>
-        </Col>
-      </Row>
-
-
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       <Table xs={12} md={12} striped bordered hover className='tableStyle'>
         <thead className='theadStyle'>
           <tr>
