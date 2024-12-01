@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ConfirmModal from './confirmModal';
+import ConfirmModal from './components/confirmModal';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import Pagination from '@mui/material/Pagination';
 import EditServerModal from './editServerModal';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/services.css';
-import AddServer from './addServer';
+import AddServer from './components/addServerModal';
 import axios from 'axios';
 import Search from './components/search';
 

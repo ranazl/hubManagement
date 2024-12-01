@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ConfirmModal from './confirmModal';
+import ConfirmModal from './components/confirmModal';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import Pagination from '@mui/material/Pagination';
 import EditUserModal from './editUserModal';
-import AddUser from './addUser';
+import AddUser from './components/addUserModal';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/services.css';
 import axios from 'axios';
