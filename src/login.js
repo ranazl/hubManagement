@@ -19,7 +19,7 @@ function Login() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (username === 'rana' && password === 'pass') {
-                    resolve({ token: '', username: username }); // Pass username here
+                    resolve({ token: '', username: username }); 
                 } else {
                     reject('نام کاربری یا رمز عبور صحیح نمی باشد');
                 }
@@ -31,7 +31,7 @@ function Login() {
         event.preventDefault();
         mockAuthService(username, password)
             .then((response) => {
-                navigate('/main', { state: { username: response.username } }); // Pass the username to Main component
+                navigate('/main', { state: { username: response.username } }); 
             })
             .catch((error) => {
                 setError(error);
