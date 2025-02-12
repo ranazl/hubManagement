@@ -15,7 +15,7 @@ function Login() {
     const navigate = useNavigate();
 
     const mockAuthService = (username, password) => {
-        // This is a mock function. Replace this with your actual authentication logic.
+        
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (username === 'rana' && password === 'pass') {
